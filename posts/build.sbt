@@ -19,8 +19,8 @@ libraryDependencies ++= Seq(
   "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
 )
 
-enablePlugins(JavaAppPackaging)
-enablePlugins(DockerPlugin)
+//enablePlugins(JavaAppPackaging)
+//enablePlugins(DockerPlugin)
 //dockerExposedPorts := Seq(9000) //expose default Play port
 
 dockerChmodType          := DockerChmodType.UserGroupWriteExecute

@@ -1,3 +1,6 @@
+import com.typesafe.sbt.packager.docker.DockerChmodType
+import com.typesafe.sbt.packager.docker.DockerPermissionStrategy
+
 name := """query"""
 organization := "com.example"
 
@@ -14,6 +17,10 @@ libraryDependencies ++= Seq(
   "io.circe"               %% "circe-generic"      % "0.14.1",
   "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
 )
+
+dockerChmodType          := DockerChmodType.UserGroupWriteExecute
+dockerPermissionStrategy := DockerPermissionStrategy.CopyChown
+
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "com.example.controllers._"
 
