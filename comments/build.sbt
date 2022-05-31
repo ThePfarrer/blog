@@ -18,8 +18,15 @@ libraryDependencies ++= Seq(
   "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
 )
 
+enablePlugins(JavaAppPackaging)
+enablePlugins(DockerPlugin)
+
 dockerChmodType          := DockerChmodType.UserGroupWriteExecute
 dockerPermissionStrategy := DockerPermissionStrategy.CopyChown
+dockerExposedPorts       := Seq(9001) //expose default Play port
+dockerBaseImage          := "openjdk:11-jre-slim"
+dockerRepository         := Some("thepfarrer")
+dockerUpdateLatest       := true
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "com.example.controllers._"
 
