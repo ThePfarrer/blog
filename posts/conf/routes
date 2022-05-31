@@ -5,7 +5,7 @@
 
 # An example controller showing a sample home page
 GET     /posts                       controllers.HomeController.readPost()
-POST     /posts                      controllers.HomeController.createPost()
+POST     /posts/create                      controllers.HomeController.createPost()
 POST     /events                     controllers.HomeController.events()
 
 

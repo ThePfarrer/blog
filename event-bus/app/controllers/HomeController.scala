@@ -22,9 +22,9 @@ class HomeController @Inject() (ws: WSClient, val controllerComponents: Controll
   def events() = Action { request =>
     val event = request.body.asJson.get
 
-    ws.url("http://localhost:9000/events").post(event)
-    ws.url("http://localhost:9001/events").post(event)
-    ws.url("http://localhost:9002/events").post(event)
+    ws.url("http://posts-srv:9000/events").post(event)
+    ws.url("http://comments-srv:9001/events").post(event)
+    ws.url("http://query-srv:9002/events").post(event)
 
     Ok
   }

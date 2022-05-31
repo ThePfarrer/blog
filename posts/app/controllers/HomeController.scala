@@ -54,7 +54,7 @@ class HomeController @Inject() (ws: WSClient, cc: ControllerComponents) extends 
 
         val postEvent = Json.toJson(Event("PostCreated", Data(id, value.title)))
 
-        ws.url("http://localhost:9005/events").post(postEvent)
+        ws.url("http://event-bus-srv:9005/events").post(postEvent)
 
         Created(posts(id).asJson)
 

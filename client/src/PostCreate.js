@@ -7,7 +7,7 @@ const PostCreate = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    await axios.post("api1/posts", { title });
+    await axios.post("api1/posts/create", { title });
 
     setTitle('')
   };
